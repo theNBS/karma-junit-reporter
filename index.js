@@ -74,7 +74,7 @@ var JUnitReporter = function (baseReporterDecorator, config, logger, helper, for
       suite.att('version', '1')
       exposee = suite.ele('file', {'path': 'fixedString'})
     } else {
-      suite = suites[browser.id] = builder.create('testsuite')
+      suite = suites[browser.id] = builder.create('testsuite', { allowSurrogateChars: true })
       suite.att('name', browser.name)
       .att('package', pkgName)
       .att('timestamp', timestamp)
